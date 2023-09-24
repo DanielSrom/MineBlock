@@ -1,0 +1,17 @@
+name: mineblock
+version: '${project.version}'
+main: me.tallonscze.mineblock.MineBlock
+api-version: 1.20
+commands:
+  play:
+    description: Create iland
+    usage: /play
+    permission: mineblock.play
+  spawn:
+    description: Teleport to Spawn
+    usage: /spawn
+    permission: mineblock.spawn
+  setspawn:
+    description: Set Spawn
+    usage: /setspawn
+    permission: mineblock.setspawn
