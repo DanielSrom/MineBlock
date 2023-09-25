@@ -1,7 +1,6 @@
 package me.tallonscze.mineblock.commands;
 
 import me.tallonscze.mineblock.utility.IslandUtily;
-import me.tallonscze.mineblock.worldEdit.WorldEditUtility;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

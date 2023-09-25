@@ -2,7 +2,6 @@ package me.tallonscze.mineblock.utility;
 
 import me.tallonscze.mineblock.data.PlayerData;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import java.util.HashMap;
 import java.util.Map;
