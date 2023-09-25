@@ -12,7 +12,6 @@ public class ConfigUtility {
 
     public static FileConfiguration getConfig(){
         File file = new File(MineBlock.getPlugin(MineBlock.class).getDataFolder(), "config.yml");
-        String nameSchematic;
         if(file.exists()){
             return YamlConfiguration.loadConfiguration(file);
         }else {
