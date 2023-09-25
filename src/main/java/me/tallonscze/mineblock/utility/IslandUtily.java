@@ -36,19 +36,13 @@ public class IslandUtily {
     public static void playMineBLock(Player player) {
         createIsland(player);
         TimerUtils.setPlayerStartTime(player);
-
-        //Timer to run end of Game
-        //Implements time from config
+        TimerUtils.getCurrentTime(player, timeToFinish* 1000L);
         new BukkitRunnable(){
             @Override
             public void run(){
-                deleteIsland(player);
+                player.sendMessage("Aktuální čas je: " + TimerUtils.getCurrentTime(player, timeToFinish* 1000L));
             }
-        }.runTaskLater(MineBlock.getPlugin(MineBlock.class), timeToFinish);
-
-
-
-
-
+        }.runTaskTimer(MineBlock.getPlugin(MineBlock.class), timeToFinish, 1);
+        deleteIsland(player);
     }
 }

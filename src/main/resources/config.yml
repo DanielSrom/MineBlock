@@ -2,6 +2,7 @@ schematic:
   name: test
 
 game:
+  #Time in seconds
   time: 10
 
 spawn:

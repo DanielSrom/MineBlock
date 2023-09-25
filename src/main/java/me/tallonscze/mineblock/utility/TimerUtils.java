@@ -20,8 +20,8 @@ public class TimerUtils {
         return data.getTimeEnd()-data.getTimeStart();
     }
 
-    public static long getCurrentTime(Player player){
+    public static long getCurrentTime(Player player, long timer){
         PlayerData data = PlayerUtility.getPlayerData(player);
-        return System.currentTimeMillis()-data.getTimeStart();
+        return (System.currentTimeMillis()+timer)-data.getTimeStart();
     }
 }
