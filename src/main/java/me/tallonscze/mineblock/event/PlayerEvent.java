@@ -57,6 +57,8 @@ public class PlayerEvent implements Listener {
         data.setLast_value(stats.getInt("stats.last_value"));
         data.setTop_value(stats.getInt("stats.top_value"));
         data.setPlayed(stats.getInt("stats.played"));
+        data.setTimeStart(0);
+        data.setTimeEnd(0);
         PlayerUtility.setPlayerData(event.getPlayer(), data);
         data.setActive(false);
     }

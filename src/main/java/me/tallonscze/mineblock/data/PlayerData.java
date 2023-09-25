@@ -8,6 +8,25 @@ public class PlayerData {
     private int played;
     private boolean active;
 
+    private int timeStart;
+    private int timeEnd;
+
+    public int getTimeStart() {
+        return timeStart;
+    }
+
+    public void setTimeStart(int timeStart) {
+        this.timeStart = timeStart;
+    }
+
+    public int getTimeEnd() {
+        return timeEnd;
+    }
+
+    public void setTimeEnd(int timeEnd) {
+        this.timeEnd = timeEnd;
+    }
+
     public boolean isActive() {
         return active;
     }
