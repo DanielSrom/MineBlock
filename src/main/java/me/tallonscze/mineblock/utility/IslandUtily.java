@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class IslandUtily {
-    private static int timeToFinish = 20*10;
+    private static int timeToFinish = 20*ConfigUtility.getConfig().getInt("game.time");
     public static void createIsland(Player player){
         PlayerData data = PlayerUtility.getPlayerData(player);
         data.setActive(true);

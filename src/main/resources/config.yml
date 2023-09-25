@@ -1,6 +1,9 @@
 schematic:
   name: test
 
+game:
+  time: 10
+
 spawn:
   x: 0
   y: 0
