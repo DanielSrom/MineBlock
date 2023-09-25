@@ -1,4 +1,4 @@
-package me.tallonscze.mineblock.Inventory;
+package me.tallonscze.mineblock.inventory;
 
 import org.bukkit.inventory.Inventory;
 
