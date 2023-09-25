@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class IslandUtily {
-
+    private static int timeToFinish = 20*10;
     public static void createIsland(Player player){
         PlayerData data = PlayerUtility.getPlayerData(player);
         data.setActive(true);
@@ -35,7 +35,7 @@ public class IslandUtily {
 
     public static void playMineBLock(Player player) {
         createIsland(player);
-
+        TimerUtils.setPlayerStartTime(player);
 
         //Timer to run end of Game
         //Implements time from config
@@ -44,7 +44,7 @@ public class IslandUtily {
             public void run(){
                 deleteIsland(player);
             }
-        }.runTaskLater(MineBlock.getPlugin(MineBlock.class), 20*10);
+        }.runTaskLater(MineBlock.getPlugin(MineBlock.class), timeToFinish);
 
 
 
