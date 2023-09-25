@@ -9,8 +9,8 @@ commands:
     permission: mineblock.play
   spawn:
     description: Teleport to Spawn
-    usage: /spawn
-    permission: mineblock.spawn
+    usage: /Spawn
+    permission: mineblock.Spawn
   setspawn:
     description: Set Spawn
     usage: /setspawn

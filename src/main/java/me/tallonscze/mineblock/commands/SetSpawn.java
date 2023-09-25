@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class setSpawn implements CommandExecutor {
+public class SetSpawn implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
@@ -27,12 +27,12 @@ public class setSpawn implements CommandExecutor {
         File file = new File(MineBlock.getPlugin(MineBlock.class).getDataFolder(), "config.yml");
         if (file.exists()){
             FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            config.set("spawn.x", playerLocation.getX());
-            config.set("spawn.y", playerLocation.getY());
-            config.set("spawn.z", playerLocation.getZ());
-            config.set("spawn.world", playerLocation.getWorld().getName());
-            config.set("spawn.pitch", playerLocation.getPitch());
-            config.set("spawn.yaw", playerLocation.getYaw());
+            config.set("Spawn.x", playerLocation.getX());
+            config.set("Spawn.y", playerLocation.getY());
+            config.set("Spawn.z", playerLocation.getZ());
+            config.set("Spawn.world", playerLocation.getWorld().getName());
+            config.set("Spawn.pitch", playerLocation.getPitch());
+            config.set("Spawn.yaw", playerLocation.getYaw());
             try{
                 config.save(file);
             }catch (Exception e){

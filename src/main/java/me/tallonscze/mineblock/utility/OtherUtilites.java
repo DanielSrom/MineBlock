@@ -14,7 +14,7 @@ public class OtherUtilites {
         File file = new File(MineBlock.getPlugin(MineBlock.class).getDataFolder(), "config.yml");
         if (file.exists()){
             FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            return new Location(Bukkit.getWorld(config.getString("spawn.world")) ,config.getDouble("spawn.x"), config.getDouble("spawn.y"), config.getDouble("spawn.z"), (float) config.getDouble("spawn.yaw"), (float) config.getDouble("spawn.pitch"));
+            return new Location(Bukkit.getWorld(config.getString("Spawn.world")) ,config.getDouble("Spawn.x"), config.getDouble("Spawn.y"), config.getDouble("Spawn.z"), (float) config.getDouble("Spawn.yaw"), (float) config.getDouble("Spawn.pitch"));
         }
         return new Location(Bukkit.getWorld("world"), 100, 100, 100);
     }
