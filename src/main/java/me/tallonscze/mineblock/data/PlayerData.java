@@ -8,22 +8,22 @@ public class PlayerData {
     private int played;
     private boolean active;
 
-    private int timeStart;
-    private int timeEnd;
+    private long timeStart;
+    private long timeEnd;
 
-    public int getTimeStart() {
+    public long getTimeStart() {
         return timeStart;
     }
 
-    public void setTimeStart(int timeStart) {
+    public void setTimeStart(long timeStart) {
         this.timeStart = timeStart;
     }
 
-    public int getTimeEnd() {
+    public long getTimeEnd() {
         return timeEnd;
     }
 
-    public void setTimeEnd(int timeEnd) {
+    public void setTimeEnd(long timeEnd) {
         this.timeEnd = timeEnd;
     }
 
