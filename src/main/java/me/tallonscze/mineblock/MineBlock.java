@@ -3,6 +3,7 @@ package me.tallonscze.mineblock;
 import me.tallonscze.mineblock.commands.createIsland;
 import me.tallonscze.mineblock.commands.setSpawn;
 import me.tallonscze.mineblock.commands.spawn;
+import me.tallonscze.mineblock.event.IslandEvent;
 import me.tallonscze.mineblock.event.PlayerEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,6 +15,7 @@ public final class MineBlock extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(new PlayerEvent(), this);
+        getServer().getPluginManager().registerEvents(new IslandEvent(), this);
 
         if(!getDataFolder().exists()){
             getDataFolder().mkdirs();
