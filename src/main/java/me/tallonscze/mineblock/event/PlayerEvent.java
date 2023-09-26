@@ -2,7 +2,9 @@ package me.tallonscze.mineblock.event;
 
 import me.tallonscze.mineblock.MineBlock;
 import me.tallonscze.mineblock.data.PlayerData;
+import me.tallonscze.mineblock.utility.OtherUtilites;
 import me.tallonscze.mineblock.utility.PlayerUtility;
+import me.tallonscze.mineblock.utility.TimerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -64,6 +66,8 @@ public class PlayerEvent implements Listener {
         data.setTimeEnd(0);
         PlayerUtility.setPlayerData(event.getPlayer(), data);
         data.setActive(false);
+        OtherUtilites.showSideBar(event.getPlayer());
+        TimerUtils.timerToScoreboard(event.getPlayer());
     }
 
 

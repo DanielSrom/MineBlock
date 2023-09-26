@@ -14,6 +14,7 @@ public class IslandUtily {
         PlayerData data = PlayerUtility.getPlayerData(player);
         data.setActive(true);
         data.setLast_value(0);
+        data.setPlayed(data.getPlayed()+1);
         WorldEditUtility.activeIland++;
         int xCordsFinal = 100 * WorldEditUtility.activeIland;
         WorldEditUtility.pasteSchematic(xCordsFinal, 100, 100);

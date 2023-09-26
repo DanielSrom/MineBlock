@@ -5,12 +5,14 @@ import me.tallonscze.mineblock.commands.SetSpawn;
 import me.tallonscze.mineblock.commands.Spawn;
 import me.tallonscze.mineblock.event.IslandEvent;
 import me.tallonscze.mineblock.event.PlayerEvent;
+import me.tallonscze.mineblock.utility.ConfigUtility;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
 public final class MineBlock extends JavaPlugin {
 
+    int configVersion = 2;
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -35,6 +37,9 @@ public final class MineBlock extends JavaPlugin {
 
         File config = new File(getDataFolder(), "config.yml");
         if(!config.exists()){
+            saveResource("config.yml", false);
+        } else if (ConfigUtility.getConfig().getInt("global.version") != configVersion) {
+            config.delete();
             saveResource("config.yml", false);
         }
 

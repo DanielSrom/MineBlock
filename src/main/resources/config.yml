@@ -1,5 +1,11 @@
+global:
+  #Time to refresh scoreboard in seconds
+  time_to_refresh_scoreboard: 30
+  #Don´t change this!
+  version: 2
+
 schematic:
-  name: test
+  name: testtwo
 
 game:
   #Time in seconds

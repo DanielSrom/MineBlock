@@ -45,4 +45,23 @@ public class TimerUtils {
             }
         }.runTaskTimer(MineBlock.getPlugin(MineBlock.class), 0, 20);
     }
+
+    public static void timerToScoreboard(Player player){
+        int refreshTime = ConfigUtility.getConfig().getInt("global.time_to_refresh_scoreboard");
+        if (refreshTime == 0){
+
+            System.out.println("[MineBlock] Time to refresh is not set!");
+            return;
+        }
+        new BukkitRunnable(){
+            @Override
+            public void run(){
+                if(!player.isOnline()){
+                    this.cancel();
+                }
+                OtherUtilites.showSideBar(player);
+            }
+
+        }.runTaskTimer(MineBlock.getPlugin(MineBlock.class), 0, refreshTime*20);
+    }
 }

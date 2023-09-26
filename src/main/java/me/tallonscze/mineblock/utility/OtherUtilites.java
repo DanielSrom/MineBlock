@@ -1,6 +1,7 @@
 package me.tallonscze.mineblock.utility;
 
 import me.tallonscze.mineblock.MineBlock;
+import me.tallonscze.mineblock.data.PlayerData;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -22,15 +23,19 @@ public class OtherUtilites {
         return new Location(Bukkit.getWorld("world"), 100, 100, 100);
     }
 
-    public static void showSideBar(Player player, String message){
+    public static void showSideBar(Player player){
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard scoreboard = manager.getNewScoreboard();
-        Objective objective = scoreboard.registerNewObjective("ActionBar", Criteria.DUMMY, Component.text(message));
+        Objective objective = scoreboard.registerNewObjective("SideBar", Criteria.DUMMY, Component.text("§4§lBurning§f§lCube Network"));
 
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-        Score score = objective.getScore(message);
-        score.setScore(1);
-
+        Score score = objective.getScore("---------------");
+        score.setScore(15);
+        Score s14 = objective.getScore("Your Name: "+player.getName());
+        s14.setScore(14);
+        PlayerData data = PlayerUtility.getPlayerData(player);
+        Score s13 = objective.getScore("You played: "+data.getPlayed());
+        s13.setScore(13);
         player.setScoreboard(scoreboard);
 
     }
