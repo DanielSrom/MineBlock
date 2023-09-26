@@ -2,7 +2,9 @@ global:
   #Time to refresh scoreboard in seconds
   time_to_refresh_scoreboard: 30
   #Don´t change this!
-  version: 2
+  version: 3
+  #Dont´t change this!
+  spawnset: false
 
 schematic:
   name: testtwo

@@ -32,6 +32,7 @@ public class IslandUtily {
         player.teleport(OtherUtilites.getSpawnLocation());
         data.setActive(false);
         WorldEditUtility.activeIland--;
+        player.setBedSpawnLocation(OtherUtilites.getSpawnLocation(), true);
     }
 
     public static void playMineBLock(Player player) {

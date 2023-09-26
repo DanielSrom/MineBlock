@@ -1,6 +1,7 @@
 package me.tallonscze.mineblock.commands;
 
 import me.tallonscze.mineblock.MineBlock;
+import me.tallonscze.mineblock.utility.OtherUtilites;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,21 +25,7 @@ public class SetSpawn implements CommandExecutor {
             return false;
         }
         Location playerLocation = player.getLocation();
-        File file = new File(MineBlock.getPlugin(MineBlock.class).getDataFolder(), "config.yml");
-        if (file.exists()){
-            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            config.set("Spawn.x", playerLocation.getX());
-            config.set("Spawn.y", playerLocation.getY());
-            config.set("Spawn.z", playerLocation.getZ());
-            config.set("Spawn.world", playerLocation.getWorld().getName());
-            config.set("Spawn.pitch", playerLocation.getPitch());
-            config.set("Spawn.yaw", playerLocation.getYaw());
-            try{
-                config.save(file);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
+        OtherUtilites.setSpawnLocation(playerLocation);
 
 
 

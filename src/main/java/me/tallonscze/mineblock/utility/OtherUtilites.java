@@ -18,9 +18,27 @@ public class OtherUtilites {
         File file = new File(MineBlock.getPlugin(MineBlock.class).getDataFolder(), "config.yml");
         if (file.exists()){
             FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            return new Location(Bukkit.getWorld(config.getString("Spawn.world")) ,config.getDouble("Spawn.x"), config.getDouble("Spawn.y"), config.getDouble("Spawn.z"), (float) config.getDouble("Spawn.yaw"), (float) config.getDouble("Spawn.pitch"));
+            return new Location(Bukkit.getWorld(config.getString("spawn.world")) ,config.getDouble("spawn.x"), config.getDouble("spawn.y"), config.getDouble("spawn.z"), (float) config.getDouble("spawn.yaw"), (float) config.getDouble("spawn.pitch"));
         }
         return new Location(Bukkit.getWorld("world"), 100, 100, 100);
+    }
+
+    public static void setSpawnLocation(Location playerLocation){
+        File file = new File(MineBlock.getPlugin(MineBlock.class).getDataFolder(), "config.yml");
+        if (file.exists()){
+            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
+            config.set("spawn.x", playerLocation.getX());
+            config.set("spawn.y", playerLocation.getY());
+            config.set("spawn.z", playerLocation.getZ());
+            config.set("spawn.world", playerLocation.getWorld().getName());
+            config.set("spawn.pitch", playerLocation.getPitch());
+            config.set("spawn.yaw", playerLocation.getYaw());
+            try{
+                config.save(file);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void showSideBar(Player player){
