@@ -14,12 +14,12 @@ public class IslandUtily {
         PlayerData data = PlayerUtility.getPlayerData(player);
         data.setActive(true);
         data.setLast_value(0);
+        WorldEditUtility.activeIland++;
         int xCordsFinal = 100 * WorldEditUtility.activeIland;
         WorldEditUtility.pasteSchematic(xCordsFinal, 100, 100);
-        WorldEditUtility.activeIland++;
-        Location locationIsland = new Location(Bukkit.getWorld("world"), xCordsFinal, 102, 100);
+        Location locationIsland = new Location(Bukkit.getWorld("world"), xCordsFinal, 100, 100);
         player.teleport(locationIsland);
-        player.setBedSpawnLocation(locationIsland);
+        player.setBedSpawnLocation(locationIsland, true);
     }
 
     public static void deleteIsland(Player player){
@@ -37,12 +37,6 @@ public class IslandUtily {
         createIsland(player);
         TimerUtils.setPlayerStartTime(player);
         TimerUtils.getCurrentTime(player, timeToFinish* 1000L);
-        new BukkitRunnable(){
-            @Override
-            public void run(){
-                player.sendMessage("Aktuální čas je: " + TimerUtils.getCurrentTime(player, timeToFinish* 1000L));
-            }
-        }.runTaskTimer(MineBlock.getPlugin(MineBlock.class), timeToFinish, 1);
-        deleteIsland(player);
+        TimerUtils.Timer(10, player);
     }
 }

@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class createIsland implements CommandExecutor {
+public class CreateIsland implements CommandExecutor {
 
 
     @Override
@@ -22,8 +22,9 @@ public class createIsland implements CommandExecutor {
             return false;
         }
         //IslandUtily.createIsland(player);
-        IslandUtily.playMineBLock(player);
         player.sendMessage("Momentální počet ostrovů je:" + WorldEditUtility.activeIland);
+        IslandUtily.playMineBLock(player);
+
 
 
 
