@@ -10,8 +10,12 @@ commands:
   spawn:
     description: Teleport to Spawn
     usage: /spawn
-    permission: mineblock.Spawn
+    permission: mineblock.spawn
   setspawn:
     description: Set Spawn
     usage: /setspawn
     permission: mineblock.setspawn
+  upgrade:
+    description: Open upgrade menu
+    usage: /upgrade
+    permission: mineblock.upgrade

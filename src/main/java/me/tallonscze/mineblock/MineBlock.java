@@ -1,6 +1,7 @@
 package me.tallonscze.mineblock;
 
 import me.tallonscze.mineblock.commands.CreateIsland;
+import me.tallonscze.mineblock.commands.OpenInventoryUpgradeMenu;
 import me.tallonscze.mineblock.commands.SetSpawn;
 import me.tallonscze.mineblock.commands.Spawn;
 import me.tallonscze.mineblock.event.IslandEvent;
@@ -54,6 +55,7 @@ public final class MineBlock extends JavaPlugin {
         getCommand("play").setExecutor(new CreateIsland());
         getCommand("spawn").setExecutor(new Spawn());
         getCommand("setspawn").setExecutor(new SetSpawn());
+        getCommand("upgrade").setExecutor(new OpenInventoryUpgradeMenu());
 
     }
 

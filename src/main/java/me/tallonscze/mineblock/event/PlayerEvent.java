@@ -2,6 +2,7 @@ package me.tallonscze.mineblock.event;
 
 import me.tallonscze.mineblock.MineBlock;
 import me.tallonscze.mineblock.data.PlayerData;
+import me.tallonscze.mineblock.inventory.UpgradeMenu;
 import me.tallonscze.mineblock.utility.OtherUtilites;
 import me.tallonscze.mineblock.utility.PlayerUtility;
 import me.tallonscze.mineblock.utility.TimerUtils;
@@ -12,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -115,6 +117,14 @@ public class PlayerEvent implements Listener {
         data.setLast_value(current_value+block_value);
         data.setBlock_brake(block_brake+1);
         PlayerUtility.setPlayerData(player, data);
+    }
+
+    @EventHandler
+    public void onPlayerClickInventoryEvent(InventoryClickEvent event){
+        Player player = (Player) event.getWhoClicked();
+        if(event.getClickedInventory() == UpgradeMenu.createMenu()){
+            event.setCancelled(true);
+        }
     }
 }
 
