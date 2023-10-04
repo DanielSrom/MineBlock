@@ -1,0 +1,24 @@
+name: mineblock
+version: '${version}'
+main: me.tallonscze.mineblock.Mineblock
+api-version: 1.20
+prefix: [ MineBlock ]
+authors: [ TallonsCZ ]
+
+commands:
+  play:
+    description: Create iland
+    usage: /play
+    permission: mineblock.play
+  spawn:
+    description: Teleport to Spawn
+    usage: /spawn
+    permission: mineblock.spawn
+  setspawn:
+    description: Set Spawn
+    usage: /setspawn
+    permission: mineblock.setspawn
+  upgrade:
+    description: Open upgrade menu
+    usage: /upgrade
+    permission: mineblock.upgrade
