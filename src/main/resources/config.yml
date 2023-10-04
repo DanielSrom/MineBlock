@@ -1,0 +1,22 @@
+global:
+  #Time to refresh scoreboard in seconds
+  time_to_refresh_scoreboard: 30
+  #Don´t change this!
+  version: 3
+  #Dont´t change this!
+  spawnset: false
+
+schematic:
+  name: testtwo
+
+game:
+  #Time in seconds
+  time: 10
+
+spawn:
+  x: 0
+  y: 0
+  z: 0
+  pitch: 0
+  yaw: 0
+  world: world
