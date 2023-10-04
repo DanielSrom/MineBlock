@@ -1,0 +1,23 @@
+info:
+  name: "menu"
+  #Size must be : by 9
+  size: 9
+  id: "menu"
+
+
+item:
+  diamond:
+    #Type is different, you can choose (item, tool)
+    type: item
+    id: minecraft:stone
+    name: "Super Diamond"
+    count: 4
+    #Number 1 - size in info
+    slot: 4
+  diamond_pickaxe:
+    type: tool
+    name: "Tallons sword"
+    count: 1
+    id: minecraft:diamond_pickaxe
+    #Number 1 - size in info
+    slot: 2

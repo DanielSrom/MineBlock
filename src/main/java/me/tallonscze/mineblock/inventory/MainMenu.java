@@ -6,13 +6,4 @@ import org.bukkit.inventory.Inventory;
 
 public class MainMenu {
 
-    private final Inventory inventory;
-
-    public MainMenu() {
-        this.inventory = Bukkit.createInventory(null, 27);
-    }
-
-    public Inventory getInventory(){
-        return this.inventory;
-    }
 }
