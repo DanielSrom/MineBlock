@@ -41,4 +41,9 @@ public class InventoryUtility {
         }
         return inventories.get(name).getInventory();
     }
+
+    public static boolean containsInventory(Inventory inventory){
+
+        return true;
+    }
 }

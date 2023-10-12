@@ -19,6 +19,7 @@ public class OpenMainMenu implements CommandExecutor {
             return true;
 
         }
+
         player.openInventory(menu);
         return true;
     }

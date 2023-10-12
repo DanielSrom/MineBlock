@@ -7,7 +7,6 @@ public class PlayerData {
     private int top_value;
     private int played;
     private boolean active;
-
     private long timeStart;
     private long timeEnd;
 
