@@ -5,6 +5,8 @@ import me.tallonscze.mineblock.data.PlayerData;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.WorldCreator;
+import org.bukkit.WorldType;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -39,6 +41,13 @@ public class OtherUtility {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void createWorld(){
+        WorldCreator c = new WorldCreator("MineBlock");
+        c.generator(new WorldGenerator());
+        c.generateStructures(false);
+        c.createWorld();
     }
 
     public static void showSideBar(Player player){

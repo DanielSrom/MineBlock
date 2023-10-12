@@ -1,6 +1,7 @@
 package me.tallonscze.mineblock.event;
 
 import me.tallonscze.mineblock.Mineblock;
+import me.tallonscze.mineblock.data.InventoryData;
 import me.tallonscze.mineblock.data.PlayerData;
 import me.tallonscze.mineblock.utility.InventoryUtility;
 import me.tallonscze.mineblock.utility.OtherUtility;
@@ -128,14 +129,13 @@ public class PlayerEvent implements Listener {
     public void onPlayerClickInventoryEvent(InventoryClickEvent event){
         Player player = (Player) event.getWhoClicked();
         Inventory clickInv = event.getInventory();
+        InventoryData data = null;
         if(InventoryUtility.containsInventory(clickInv)){
-
+            data = InventoryUtility.getInventoryData(clickInv);
         }
-
-        //if(event.getClickedInventory() == UpgradeMenu.createMenu()){
-        //    event.setCancelled(true);
-        //}
-
+        if(data != null && data.isCancelClick()){
+            event.setCancelled(true);
+        }
     }
 }
 

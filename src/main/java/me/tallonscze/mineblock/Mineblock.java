@@ -9,6 +9,7 @@ import me.tallonscze.mineblock.event.PlayerEvent;
 import me.tallonscze.mineblock.utility.ConfigUtility;
 import me.tallonscze.mineblock.utility.InventoryUtility;
 import me.tallonscze.mineblock.utility.OtherUtility;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -73,6 +74,12 @@ public final class Mineblock extends JavaPlugin {
         if (spawnLocation != null && ConfigUtility.getConfig().getBoolean("global.spawnset") != true) {
             OtherUtility.setSpawnLocation(spawnLocation);
             ConfigUtility.getConfig().set("global.spawnset", true);
+        }
+        System.out.println(Bukkit.getWorld("MineBlock"));
+        if(Bukkit.getWorld("MineBlock") == null){
+            OtherUtility.createWorld();
+
+            System.out.println("Vytvářím svět");
         }
 
 

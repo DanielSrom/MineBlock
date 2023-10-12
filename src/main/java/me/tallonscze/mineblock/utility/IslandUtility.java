@@ -21,7 +21,7 @@ public class IslandUtility {
         WorldEditUtility.activeIland++;
         int xCordsFinal = 100 * WorldEditUtility.activeIland;
         WorldEditUtility.pasteSchematic(xCordsFinal, 100, 100);
-        Location locationIsland = new Location(Bukkit.getWorld("world"), xCordsFinal, 100, 100);
+        Location locationIsland = new Location(Bukkit.getWorld("MineBlock"), xCordsFinal, 100, 100);
         player.teleport(locationIsland);
         player.setBedSpawnLocation(locationIsland, true);
     }

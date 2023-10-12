@@ -1,4 +1,4 @@
-package me.tallonscze.mineblock.worldEdit;
+package me.tallonscze.mineblock.utility;
 
 
 import com.sk89q.worldedit.EditSession;
@@ -62,7 +62,7 @@ public class WorldEditUtility{
             return;
         }
 
-        World world = Bukkit.getWorld("world");
+        World world = Bukkit.getWorld("MineBlock");
         com.sk89q.worldedit.bukkit.BukkitWorld worldBukkit = (BukkitWorld) BukkitAdapter.adapt(world);
 
         try(EditSession editSession = WorldEdit.getInstance().newEditSessionBuilder().world(worldBukkit).build()){

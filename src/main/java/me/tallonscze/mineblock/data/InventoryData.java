@@ -21,6 +21,7 @@ public class InventoryData {
     private final File pathToInventoryItem;
     private final FileConfiguration menuConfig;
     private final String id;
+    private final boolean cancelClick = true;
 
     private Map<Integer, ItemStack>items = new HashMap<>();
     public InventoryData(String name){
@@ -75,5 +76,8 @@ public class InventoryData {
 
     public void setItem(ItemStack item, int position){
         inventory.setItem(position, item);
+    }
+    public boolean isCancelClick() {
+        return cancelClick;
     }
 }
