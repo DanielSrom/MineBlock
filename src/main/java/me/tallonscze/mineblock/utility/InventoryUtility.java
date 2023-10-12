@@ -43,7 +43,6 @@ public class InventoryUtility {
     }
 
     public static boolean containsInventory(Inventory inventory){
-
-        return true;
+        return inventories.values().stream().anyMatch(value -> value.getInventory() == inventory);
     }
 }
