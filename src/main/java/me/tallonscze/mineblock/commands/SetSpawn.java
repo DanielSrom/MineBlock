@@ -1,6 +1,5 @@
 package me.tallonscze.mineblock.commands;
 
-import me.tallonscze.mineblock.Mineblock;
 import me.tallonscze.mineblock.utility.OtherUtility;
 import org.bukkit.Location;
 import org.bukkit.command.Command;

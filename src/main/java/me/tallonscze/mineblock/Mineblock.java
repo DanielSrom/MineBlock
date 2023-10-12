@@ -79,7 +79,7 @@ public final class Mineblock extends JavaPlugin {
         getCommand("play").setExecutor(new CreateIsland());
         getCommand("spawn").setExecutor(new Spawn());
         getCommand("setspawn").setExecutor(new SetSpawn());
-        getCommand("upgrade").setExecutor(new OpenMainMenu());
+        getCommand("menu").setExecutor(new OpenMainMenu());
 
         InventoryUtility.loadAllInventories();
     }

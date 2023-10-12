@@ -2,6 +2,7 @@ package me.tallonscze.mineblock.event;
 
 import me.tallonscze.mineblock.Mineblock;
 import me.tallonscze.mineblock.data.PlayerData;
+import me.tallonscze.mineblock.utility.InventoryUtility;
 import me.tallonscze.mineblock.utility.OtherUtility;
 import me.tallonscze.mineblock.utility.PlayerUtility;
 import me.tallonscze.mineblock.utility.TimerUtility;
@@ -15,6 +16,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.Inventory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -72,6 +74,8 @@ public class PlayerEvent implements Listener {
     }
 
 
+
+
     @EventHandler
     private void onPlayerQuit(PlayerQuitEvent event){
         Player player = event.getPlayer();
@@ -98,6 +102,8 @@ public class PlayerEvent implements Listener {
         Bukkit.getLogger().info(player.getName() + " se právě odpojil..");
     }
 
+    //Add player boost
+
     @EventHandler
     public void playerBrakeBlock(BlockBreakEvent event){
         Player player = event.getPlayer();
@@ -121,9 +127,15 @@ public class PlayerEvent implements Listener {
     @EventHandler
     public void onPlayerClickInventoryEvent(InventoryClickEvent event){
         Player player = (Player) event.getWhoClicked();
+        Inventory clickInv = event.getInventory();
+        if(InventoryUtility.containsInventory(clickInv)){
+
+        }
+
         //if(event.getClickedInventory() == UpgradeMenu.createMenu()){
         //    event.setCancelled(true);
         //}
+
     }
 }
 

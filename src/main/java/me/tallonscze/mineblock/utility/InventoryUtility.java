@@ -2,13 +2,10 @@ package me.tallonscze.mineblock.utility;
 
 import me.tallonscze.mineblock.Mineblock;
 import me.tallonscze.mineblock.data.InventoryData;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.Inventory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class InventoryUtility {

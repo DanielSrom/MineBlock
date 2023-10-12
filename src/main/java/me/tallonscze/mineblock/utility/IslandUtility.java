@@ -1,6 +1,5 @@
 package me.tallonscze.mineblock.utility;
 
-import me.tallonscze.mineblock.Mineblock;
 import me.tallonscze.mineblock.data.PlayerData;
 import me.tallonscze.mineblock.worldEdit.WorldEditUtility;
 import org.bukkit.Bukkit;
@@ -8,6 +7,11 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 public class IslandUtility {
+
+    //HashMAP contains Block and Value of mining
+
+
+
     private static int timeToFinish = 20*ConfigUtility.getConfig().getInt("game.time");
     public static void createIsland(Player player){
         PlayerData data = PlayerUtility.getPlayerData(player);

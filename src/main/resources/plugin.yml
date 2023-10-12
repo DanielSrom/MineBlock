@@ -18,7 +18,7 @@ commands:
     description: Set Spawn
     usage: /setspawn
     permission: mineblock.setspawn
-  upgrade:
+  menu:
     description: Open upgrade menu
-    usage: /upgrade
+    usage: /menu
     permission: mineblock.upgrade

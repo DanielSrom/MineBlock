@@ -1,6 +1,5 @@
 package me.tallonscze.mineblock.commands;
 
-import me.tallonscze.mineblock.inventory.MainMenu;
 import me.tallonscze.mineblock.utility.InventoryUtility;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
