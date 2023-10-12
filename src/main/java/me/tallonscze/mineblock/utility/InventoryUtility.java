@@ -7,6 +7,7 @@ import org.bukkit.inventory.Inventory;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class InventoryUtility {
 
@@ -37,6 +38,15 @@ public class InventoryUtility {
             return null;
         }
         return inventories.get(name).getInventory();
+    }
+
+    public static InventoryData getInventoryData(Inventory inventory) {
+        Optional<InventoryData> optionalInventoryData = inventories.values()
+                .stream()
+                .filter(value -> value.getInventory() == inventory)
+                .findAny();
+
+        return optionalInventoryData.orElse(null);
     }
 
     public static boolean containsInventory(Inventory inventory){
