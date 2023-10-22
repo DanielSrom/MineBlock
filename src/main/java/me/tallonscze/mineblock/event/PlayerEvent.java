@@ -2,6 +2,7 @@ package me.tallonscze.mineblock.event;
 
 import me.tallonscze.mineblock.Mineblock;
 import me.tallonscze.mineblock.data.InventoryData;
+import me.tallonscze.mineblock.data.ItemData;
 import me.tallonscze.mineblock.data.PlayerData;
 import me.tallonscze.mineblock.utility.InventoryUtility;
 import me.tallonscze.mineblock.utility.OtherUtility;
@@ -136,6 +137,23 @@ public class PlayerEvent implements Listener {
         if(data != null && data.isCancelClick()){
             event.setCancelled(true);
         }
+        if(data == null){
+            return;
+        }
+        if (!data.containsItem(event.getCurrentItem())){
+            return;
+        }
+        ItemData itData = data.getItemData(event.getSlot());
+        String type = itData.getType();
+        if(type == null){
+            return;
+        }
+        switch (type) {
+            case "BUY" -> System.out.println("Nákupní Item");
+            case "SELL" -> System.out.println("Prodenjní Item");
+            default -> System.out.println("Null");
+        }
+
     }
 }
 

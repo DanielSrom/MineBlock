@@ -40,6 +40,9 @@ public class InventoryData {
             for(String key : itemSection.getKeys(false)){
                 ConfigurationSection itemConfig = itemSection.getConfigurationSection(key);
                 String type = itemConfig.getString("type", null);
+                if(type != null){
+                    type = type.toUpperCase();
+                }
                 String name = itemConfig.getString("name");
                 int count = itemConfig.getInt("count");
                 int slot = itemConfig.getInt("slot");
@@ -68,6 +71,14 @@ public class InventoryData {
 
     public void loadToInventory(){
         items.forEach((key, value) -> inventory.setItem(key, value.getItemStack()));
+    }
+
+    public ItemData getItemData(int position){
+        return items.get(position);
+    }
+
+    public boolean containsItem(ItemStack itemStack){
+        return items.values().stream().anyMatch(value -> value.isEqual(itemStack));
     }
 
     public Inventory getInventory(){

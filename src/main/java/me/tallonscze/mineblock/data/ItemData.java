@@ -58,4 +58,8 @@ public class ItemData {
         this.type = null;
         this.name = name;
     }
+
+    public boolean isEqual(ItemStack itemStack){
+        return getItemStack().equals(itemStack);
+    }
 }
