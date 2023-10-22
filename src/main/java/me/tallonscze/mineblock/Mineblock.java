@@ -1,9 +1,6 @@
 package me.tallonscze.mineblock;
 
-import me.tallonscze.mineblock.commands.CreateIsland;
-import me.tallonscze.mineblock.commands.OpenMainMenu;
-import me.tallonscze.mineblock.commands.SetSpawn;
-import me.tallonscze.mineblock.commands.Spawn;
+import me.tallonscze.mineblock.commands.*;
 import me.tallonscze.mineblock.event.IslandEvent;
 import me.tallonscze.mineblock.event.PlayerEvent;
 import me.tallonscze.mineblock.utility.ConfigUtility;
@@ -87,6 +84,7 @@ public final class Mineblock extends JavaPlugin {
         getCommand("spawn").setExecutor(new Spawn());
         getCommand("setspawn").setExecutor(new SetSpawn());
         getCommand("menu").setExecutor(new OpenMainMenu());
+        getCommand("addresource").setExecutor(new AddResource());
 
         InventoryUtility.loadAllInventories();
     }

@@ -65,6 +65,23 @@ public class OtherUtility {
         s13.setScore(13);
         Score s12 = objective.getScore("Your money: "+data.getMoney());
         s12.setScore(12);
+        Score s11 = objective.getScore("---------------");
+        s11.setScore(11);
+        Score s10 = objective.getScore("Resource: ");
+        Score s9 = objective.getScore("- §6Copper: §f"+data.getCopper());
+        Score s8 = objective.getScore("- Iron: §f"+data.getIron());
+        Score s7 = objective.getScore("- §eGold: §f"+data.getGold());
+        Score s6 = objective.getScore("- §bDiamond: §f"+data.getDiamond());
+        Score s5 = objective.getScore("- §aEmerald: §f"+data.getEmerald());
+        s10.setScore(10);
+        s9.setScore(9);
+        s8.setScore(8);
+        s7.setScore(7);
+        s6.setScore(6);
+        s5.setScore(5);
+
+
+
         player.setScoreboard(scoreboard);
 
     }
