@@ -7,15 +7,19 @@ info:
 
 item:
   diamond:
-    #Type is different, you can choose (item, tool)
-    type: item
+    #Type is different, you can choose (BUY, SELL)
+    type: buy
+    cost: 20
     id: minecraft:stone
     name: "Super Diamond"
     count: 4
     #Number 1 - size in info
     slot: 4
+    command: "Yello World"
   diamond_pickaxe:
-    type: tool
+    type: sell
+    cost: 10
+    command: "say Hello World"
     name: "Tallons sword"
     count: 1
     id: minecraft:diamond_pickaxe

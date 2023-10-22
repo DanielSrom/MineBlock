@@ -142,12 +142,17 @@ public class PlayerEvent implements Listener {
         }
         ItemData itData = data.getItemData(event.getSlot());
         String type = itData.getType();
+        String command = itData.getCommand();
+        double cost = itData.getCost();
+        if(command == null){
+            command = " ";
+        }
         if(type == null){
             return;
         }
         switch (type) {
-            case "BUY" -> MoneyUtility.buyCommand(player, 10, "none");
-            case "SELL" -> MoneyUtility.sellCommand(player, 10, "none");
+            case "BUY" -> MoneyUtility.buyCommand(player, cost, command);
+            case "SELL" -> MoneyUtility.sellCommand(player, cost, command);
             default -> System.out.println("Null");
         }
 

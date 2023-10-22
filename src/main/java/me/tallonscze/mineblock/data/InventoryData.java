@@ -45,6 +45,8 @@ public class InventoryData {
                 }
                 String name = itemConfig.getString("name");
                 int count = itemConfig.getInt("count");
+                String command = itemConfig.getString("command", null);
+                double cost = itemConfig.getDouble("cost", 1);
                 int slot = itemConfig.getInt("slot");
                 String id = itemConfig.getString("id", "minecraft:stone").toUpperCase();
                 Material itemMate = Material.getMaterial(id);
@@ -53,7 +55,7 @@ public class InventoryData {
                     continue;
                 }
                 ItemStack item = new ItemStack(itemMate);
-                ItemData data = new ItemData(item, name);
+                ItemData data = new ItemData(item, name, command, cost);
                 data.setSize(count);
                 data.setType(type);
                 data.setName(name);

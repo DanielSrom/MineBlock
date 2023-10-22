@@ -1,6 +1,7 @@
 package me.tallonscze.mineblock.utility;
 
 import me.tallonscze.mineblock.data.PlayerData;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class MoneyUtility {
@@ -10,6 +11,7 @@ public class MoneyUtility {
         double playerMoney = data.getMoney();
         data.setMoney(playerMoney+amount);
         player.sendMessage("Provedena akce");
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), String.join(" ", command));
         PlayerUtility.setPlayerData(player, data);
     }
 
@@ -22,6 +24,7 @@ public class MoneyUtility {
         }
         data.setMoney(playerMoney-amount);
         player.sendMessage("Provedena akce");
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), String.join(" ", command));
         PlayerUtility.setPlayerData(player, data);
     }
 

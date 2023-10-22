@@ -30,7 +30,19 @@ public class ItemData {
         this.type = type;
     }
 
+    public String getCommand() {
+        return command;
+    }
+    public double getCost() {
+        return cost;
+    }
 
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+    public void setCommand(String command) {
+        this.command = command;
+    }
     public String getName() {
         return name;
     }
@@ -47,16 +59,23 @@ public class ItemData {
         this.name = name;
     }
 
+
+
+
+    private double cost;
+    private String command;
     private String name;
     private ItemStack item;
     private int size;
     private String type;
 
-    ItemData(ItemStack item, String name){
+    ItemData(ItemStack item, String name, String Command, double cost){
         this.item = item;
         this.size = 1;
         this.type = null;
         this.name = name;
+        this.command = Command;
+        this.cost = cost;
     }
 
     public boolean isEqual(ItemStack itemStack){
