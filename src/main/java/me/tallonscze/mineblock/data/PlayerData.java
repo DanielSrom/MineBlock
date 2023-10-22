@@ -9,6 +9,12 @@ public class PlayerData {
     private boolean active;
     private long timeStart;
     private long timeEnd;
+    private double copper;
+    private double iron;
+    private double gold;
+    private double diamond;
+    private double emerald;
+    private double money;
 
     public long getTimeStart() {
         return timeStart;
@@ -34,7 +40,53 @@ public class PlayerData {
         this.active = active;
     }
 
+    public double getCopper() {
+        return copper;
+    }
 
+    public void setCopper(double copper) {
+        this.copper = copper;
+    }
+
+    public double getIron() {
+        return iron;
+    }
+
+    public void setIron(double iron) {
+        this.iron = iron;
+    }
+
+    public double getGold() {
+        return gold;
+    }
+
+    public void setGold(double gold) {
+        this.gold = gold;
+    }
+
+    public double getDiamond() {
+        return diamond;
+    }
+
+    public void setDiamond(double diamond) {
+        this.diamond = diamond;
+    }
+
+    public double getEmerald() {
+        return emerald;
+    }
+
+    public void setEmerald(double emerald) {
+        this.emerald = emerald;
+    }
+
+    public double getMoney() {
+        return money;
+    }
+
+    public void setMoney(double money) {
+        this.money = money;
+    }
 
 
     public int getBlock_brake() {

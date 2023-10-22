@@ -23,7 +23,7 @@ public class InventoryData {
     private final String id;
     private final boolean cancelClick = true;
 
-    private Map<Integer, ItemStack>items = new HashMap<>();
+    private Map<Integer, ItemData>items = new HashMap<>();
     public InventoryData(String name){
 
         pathToInventoryItem = new File(Mineblock.getPlugin(Mineblock.class).getDataFolder() + "/inventories/" + name);
@@ -39,7 +39,7 @@ public class InventoryData {
         if(itemSection != null){
             for(String key : itemSection.getKeys(false)){
                 ConfigurationSection itemConfig = itemSection.getConfigurationSection(key);
-                String type = itemConfig.getString("type");
+                String type = itemConfig.getString("type", null);
                 String name = itemConfig.getString("name");
                 int count = itemConfig.getInt("count");
                 int slot = itemConfig.getInt("slot");
@@ -50,12 +50,12 @@ public class InventoryData {
                     continue;
                 }
                 ItemStack item = new ItemStack(itemMate);
-                ItemMeta itemMeta = item.getItemMeta();
-                itemMeta.displayName(Component.text(name));
-                item.setAmount(count);
-                item.setItemMeta(itemMeta);
+                ItemData data = new ItemData(item, name);
+                data.setSize(count);
+                data.setType(type);
+                data.setName(name);
                 if (!items.containsKey(slot)){
-                    items.put(slot, item);
+                    items.put(slot, data);
                 }
                 System.out.println(itemMate);
             }
@@ -67,7 +67,7 @@ public class InventoryData {
     }
 
     public void loadToInventory(){
-        items.forEach(inventory::setItem);
+        items.forEach((key, value) -> inventory.setItem(key, value.getItemStack()));
     }
 
     public Inventory getInventory(){

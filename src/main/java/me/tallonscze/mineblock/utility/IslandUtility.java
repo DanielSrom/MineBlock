@@ -1,7 +1,7 @@
 package me.tallonscze.mineblock.utility;
 
 import me.tallonscze.mineblock.data.PlayerData;
-import me.tallonscze.mineblock.worldEdit.WorldEditUtility;
+import me.tallonscze.mineblock.utility.WorldEditUtility;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
