@@ -4,10 +4,7 @@ import me.tallonscze.mineblock.Mineblock;
 import me.tallonscze.mineblock.data.InventoryData;
 import me.tallonscze.mineblock.data.ItemData;
 import me.tallonscze.mineblock.data.PlayerData;
-import me.tallonscze.mineblock.utility.InventoryUtility;
-import me.tallonscze.mineblock.utility.OtherUtility;
-import me.tallonscze.mineblock.utility.PlayerUtility;
-import me.tallonscze.mineblock.utility.TimerUtility;
+import me.tallonscze.mineblock.utility.*;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -149,8 +146,8 @@ public class PlayerEvent implements Listener {
             return;
         }
         switch (type) {
-            case "BUY" -> System.out.println("Nákupní Item");
-            case "SELL" -> System.out.println("Prodenjní Item");
+            case "BUY" -> MoneyUtility.buyCommand(player, 10, "none");
+            case "SELL" -> MoneyUtility.sellCommand(player, 10, "none");
             default -> System.out.println("Null");
         }
 
