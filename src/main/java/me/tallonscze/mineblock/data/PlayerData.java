@@ -14,7 +14,7 @@ public class PlayerData {
     private double gold;
     private double diamond;
     private double emerald;
-    private double money;
+    private double money = 2;
 
     public long getTimeStart() {
         return timeStart;

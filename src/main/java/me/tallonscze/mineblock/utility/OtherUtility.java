@@ -63,6 +63,8 @@ public class OtherUtility {
         PlayerData data = PlayerUtility.getPlayerData(player);
         Score s13 = objective.getScore("You played: "+data.getPlayed());
         s13.setScore(13);
+        Score s12 = objective.getScore("Your money: "+data.getMoney());
+        s12.setScore(12);
         player.setScoreboard(scoreboard);
 
     }
